@@ -1,3 +1,5 @@
+from datetime import datetime
+
 class TodoList:
 	def __init__(self):
 		self.list = []
@@ -7,14 +9,14 @@ class TodoList:
 
 	def update(self):
 		for item in self.list :
-			item.update("datetime")
+			item.update(datetime.today())
 		self.sort()
 
 	def importList(self, xmlFile) :
 		pass # figure this out
 
 	def sort(self):
-		self.list.sort(key = lambda l: l.importance)
+		self.list.sort(key = lambda l: -l.importance)
 
 	def view(self):
 		for item in self.list:
