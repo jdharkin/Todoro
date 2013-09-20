@@ -20,4 +20,6 @@ class TodoList:
 
 	def view(self):
 		for item in self.list:
-			item.view()
+			num = self.list.index(item)
+			print(str(num) + " " + item.title + " ") # + str(item.importance))
+			print("\t" + item.description)

@@ -11,14 +11,43 @@ todoList.addItem(TodoItem("Trash", "Take it out.", datetime(2013, 9, 17), dateti
 todoList.addItem(TodoItem("Groceries", "Go to Safeway.", datetime(2013, 9, 17), datetime(2013, 9, 20)))
 
 while(not quit) :
-	command = input("->")
+	args = input("->").split()
 
-	if command == "view":
-		todoList.view()
-	if command == "add":
-		todoList.addItem(TodoItem(input("Title: "), input("Description: "), datetime.today(),
-			datetime(int(input("Year: ")), int(input("Month: ")), int(input("Day: ")))))
-	if command == "update":
-		todoList.update()
-	if command == "exit":
-		exit()
+	# VIEW
+	if args[0] == "view" :
+		if len(args) > 1 :
+			print("Too many arguments after '" + args[0] + "'")
+		else :
+			todoList.view()
+
+	# ADD
+	elif args[0] == "add" :
+		if len(args) > 1 :
+			print("Too many arguments after '" + args[0] + "'")
+		else :
+			todoList.addItem(TodoItem(input("Title: "), input("Description: "), datetime.today(),
+				datetime(int(input("Year: ")), int(input("Month: ")), int(input("Day: ")))))
+
+	# UPDATE
+	elif args[0] == "update" :
+		if len(args) > 1 :
+			print("Too many arguments after '" + args[0] + "'")
+		else :
+			todoList.update()
+
+	# EXIT
+	elif args[0] == "exit" :
+		if len(args) > 1 :
+			print("Too many arguments after '" + args[0] + "'")
+		else :
+			exit()
+
+	elif args[0] == "edit" :
+		if len(args) != 2 :
+			print("'edit' requires one argument")
+		else :
+			print( "Edit: " + todoList.list[int(args[1])].title)
+
+
+
+

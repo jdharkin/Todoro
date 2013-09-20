@@ -13,3 +13,4 @@ class TodoItem:
 
 	def view(self):
 		print(self.title + " " + str(self.importance))
+		print("\t" + self.description)
