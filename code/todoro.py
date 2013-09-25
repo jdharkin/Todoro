@@ -10,7 +10,7 @@ todoList.addItem(TodoItem("Trash", "Take it out.", datetime(2013, 9, 17), dateti
 
 todoList.addItem(TodoItem("Groceries", "Go to Safeway.", datetime(2013, 9, 17), datetime(2013, 9, 20)))
 
-while(not quit) :
+while True :
 	args = input("->").split()
 
 	# VIEW
@@ -42,12 +42,9 @@ while(not quit) :
 		else :
 			exit()
 
+	# EDIT
 	elif args[0] == "edit" :
 		if len(args) != 2 :
 			print("'edit' requires one argument")
 		else :
 			print( "Edit: " + todoList.list[int(args[1])].title)
-
-
-
-
