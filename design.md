@@ -32,12 +32,14 @@ setup
 
 
 entry format:
+
     [title: title text]
     [description: description text]
     [start: datetime]
     [end: datetime]
     
 repeating entry format:
+
     [title: title text]
     [description: description text]
     [repeat: frequency] // can be ‘daily’ ‘weekly’ ‘monthly’ ‘yearly’ or ‘x days’ ‘x weeks’ ‘x months’ ‘x years’
