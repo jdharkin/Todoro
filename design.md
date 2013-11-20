@@ -32,18 +32,18 @@ setup
 
 
 entry format:
-> [title: title text]
-> [description: description text]
-> [start: datetime]
-> [end: datetime]
-
+    [title: title text]
+    [description: description text]
+    [start: datetime]
+    [end: datetime]
+    
 repeating entry format:
-> [title: title text]
-> [description: description text]
-> [repeat: frequency] // can be ‘daily’ ‘weekly’ ‘monthly’ ‘yearly’ or ‘x days’ ‘x weeks’ ‘x months’ ‘x years’
-> // one of:
-> [start: datetime] // necessary for ‘x somethings’ frequencies
-> [start: weekday] // useful for ‘weekly’ frequency
-> [start: month day] // useful for ‘monthly’ frequency
-
-> [end: timedelta] // not a date, but an increment of time
+    [title: title text]
+    [description: description text]
+    [repeat: frequency] // can be ‘daily’ ‘weekly’ ‘monthly’ ‘yearly’ or ‘x days’ ‘x weeks’ ‘x months’ ‘x years’
+    // one of:
+    [start: datetime] // necessary for ‘x somethings’ frequencies
+    [start: weekday] // useful for ‘weekly’ frequency
+    [start: month day] // useful for ‘monthly’ frequency
+    
+    [end: timedelta] // not a date, but an increment of time
