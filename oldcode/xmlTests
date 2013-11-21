@@ -1,0 +1,9 @@
+import xml.etree.ElementTree as ET
+
+tree = ET.parse('sample.xml')
+root = tree.getroot()
+
+for child in root:
+	print(child.tag)
+	for subChild in child:
+		print('\t', subChild.tag, subChild.text)
