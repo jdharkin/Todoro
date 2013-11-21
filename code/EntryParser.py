@@ -6,6 +6,12 @@ class EntryParser:
    def parse(filename):
       f = open(filename, 'r')
       text = f.read()
+      strings = extractBrackets(text)
+      print(text)
+      print(strings)
+
+   # extracts all text inside brackets and returns it as a string list
+   def extractBrackets(text):
       recording = False
       strings = []
       inside = ''
@@ -27,8 +33,7 @@ class EntryParser:
          # no closing bracket
          pass
 
-      print(text)
-      print(strings)
+      return strings
 
 
 EntryParser.parse('sample.do')
