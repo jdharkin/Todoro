@@ -3,6 +3,8 @@
 Each todo list entry is represented as in individual file.
 Top level of the todoro folder has unfinished entries and folders for finished and finished repeating items.
 
+the root of the todo list has a file .todoconfig that contains important information about the todo list
+
 todo/
 	(active todo items)
 	repeat/
@@ -34,6 +36,7 @@ setup
 entry format:
 
     [title: title text]
+    anything not in brackets is ignored
     [description: description text]
     [start: datetime]
     [end: datetime]
@@ -42,8 +45,8 @@ repeating entry format:
 
     [title: title text]
     [description: description text]
-    [repeat: frequency] // can be ‘daily’ ‘weekly’ ‘monthly’ ‘yearly’ or ‘x days’ ‘x weeks’ ‘x months’ ‘x years’
-    // one of:
+    [repeat: frequency]  can be ‘daily’ ‘weekly’ ‘monthly’ ‘yearly’ or ‘x days’ ‘x weeks’ ‘x months’ ‘x years’
+    one of:
     [start: datetime] // necessary for ‘x somethings’ frequencies
     [start: weekday] // useful for ‘weekly’ frequency
     [start: month day] // useful for ‘monthly’ frequency

@@ -14,8 +14,13 @@ class EntryParser:
          entry.title = dictionary['title']
       if 'description' in dictionary:
          entry.desc = dictionary['description']
+      if 'start' in dictionary:
+         entry.setStartStr(dictionary['start'])
+      if 'end' in dictionary:
+         entry.setEndStr(dictionary['end'])
 
       print(entry)
+      return entry
 
 
 
@@ -41,7 +46,8 @@ class EntryParser:
 
       if recording:
          # no closing bracket
-         pass
+         print("No closing bracket.")
+      return {}
 
       dictionary = {}
       for s in strings:
