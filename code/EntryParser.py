@@ -1,3 +1,5 @@
+from TodoEntry import *
+
 # a class with some functions for extracting information from 
 #   entry files
 class EntryParser:
@@ -6,11 +8,19 @@ class EntryParser:
    def parse(filename):
       f = open(filename, 'r')
       text = f.read()
-      strings = extractBrackets(text)
-      print(text)
-      print(strings)
+      dictionary = EntryParser.extractBrackets(text)
+      entry = TodoEntry()
+      if 'title' in dictionary:
+         entry.title = dictionary['title']
+      if 'description' in dictionary:
+         entry.desc = dictionary['description']
 
-   # extracts all text inside brackets and returns it as a string list
+      print(entry)
+
+
+
+   # returns a dictionary of all [key:value]s in the text with whitespace
+   # stripped
    def extractBrackets(text):
       recording = False
       strings = []
@@ -33,7 +43,17 @@ class EntryParser:
          # no closing bracket
          pass
 
-      return strings
+      dictionary = {}
+      for s in strings:
+         sp = s.split(':')
+         if len(sp) == 2:
+            # valid key:value
+            dictionary[sp[0].strip()] = sp[1].strip()
+         else:
+            #invalid
+            pass
+
+      return dictionary
 
 
 EntryParser.parse('sample.do')
