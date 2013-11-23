@@ -47,7 +47,7 @@ class EntryParser:
       if recording:
          # no closing bracket
          print("No closing bracket.")
-      return {}
+         return {}
 
       dictionary = {}
       for s in strings:

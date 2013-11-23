@@ -20,10 +20,12 @@ class TodoEntry:
       self.desc = desc
       self.start = start
       self.end = end
+      self.importance = 0.0
 
    def __str__(self):
-      return self.title + '\n   ' + self.desc \
-         + '\n   ' + self.start.__str__() + ' => ' + self.end.__str__()
+      return self.title + " : %3.f%%" % (self.getImportance() * 100)\
+         + '\n   ' + self.start.__str__() + ' => ' + self.end.__str__()\
+         + '\n   ' + self.desc 
 
    # sets self.start using a string
    def setStartStr(self, string):
@@ -43,3 +45,7 @@ class TodoEntry:
       else:
          #invalid string
          print(string + " is not a valid datetime.")
+
+   def getImportance(self):
+      self.importance = (datetime.today()-self.start)/(self.end-self.start)
+      return self.importance

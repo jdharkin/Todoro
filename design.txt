@@ -1,4 +1,5 @@
 # todoro #
+This file represents the current end-goal for todoro
 
 Each todo list entry is represented as in individual file.
 Top level of the todoro folder has unfinished entries and folders for finished and finished repeating items.
