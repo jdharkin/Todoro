@@ -18,8 +18,6 @@ class EntryParser:
          entry.setStartStr(dictionary['start'])
       if 'end' in dictionary:
          entry.setEndStr(dictionary['end'])
-
-      print(entry)
       return entry
 
 
@@ -60,6 +58,3 @@ class EntryParser:
             pass
 
       return dictionary
-
-
-EntryParser.parse('sample.do')
