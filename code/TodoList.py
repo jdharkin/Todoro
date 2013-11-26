@@ -1,7 +1,7 @@
 import os
 import re
 from TodoEntry import *
-from EntryParser import *
+import FileStuff
 
 ENTRY_REGEX = re.compile('.+\.do')
 
@@ -27,7 +27,7 @@ class TodoList:
       self.list.append(entry)
 
    def addEntryFilename(self, filename):
-      self.list.append(EntryParser.parse(filename))
+      self.list.append(FileStuff.parseEntryFile(filename))
 
    def sort(self):
       self.list.sort(key = lambda entry: -entry.getImportance())

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.3
 import sys
 from TodoList import *
+import FileStuff
 
 def STUB():
    print("not implemented.")
@@ -26,9 +27,7 @@ if len(sys.argv) >= 1 + 1:
    if sys.argv[1] == 'add':
       if len(sys.argv) >= 2 + 1:
          for filename in sys.argv[2:]:
-            f = open(filename, 'w')
-            f.write(TEMPLATE)
-            f.close
+            FileStuff.makeTemplate(filename)
       else:
          print('no arguments given for add.')
 

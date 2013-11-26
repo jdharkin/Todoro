@@ -23,9 +23,12 @@ class TodoEntry:
       self.importance = 0.0
 
    def __str__(self):
-      return self.title + " : %3.f%%" % (self.getImportance() * 100)\
-         + '\n   ' + self.start.__str__() + ' => ' + self.end.__str__()\
-         + '\n   ' + self.desc 
+      if self.desc:
+         return '%s : %3.f%%\n   %s => %s\n   %s'\
+            % (self.title, self.getImportance() * 100, self.start, self.end, self.desc)
+      else:
+         return '%s : %3.f%%\n   %s => %s'\
+            % (self.title, self.getImportance() * 100, self.start, self.end)
 
    # sets self.start using a string
    def setStartStr(self, string):
