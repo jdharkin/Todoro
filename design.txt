@@ -20,6 +20,9 @@ Commands:
 add [filename]
 	creates a new file with the given name and adds an entry template to the file
 
+all
+	lists all todo entries in order of importance
+
 what
 	tells you what to do
 

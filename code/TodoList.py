@@ -41,4 +41,7 @@ class TodoList:
             self.addEntryFilename(filename)
 
    def getEntry(self, index):
-      return self.list[index]
+      if len(self.list) >= index + 1:
+         return self.list[index]
+      else:
+         return None

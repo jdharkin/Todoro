@@ -35,7 +35,8 @@ class TodoEntry:
          self.start = datetime.strptime(string, FORMAT_HALF)
       else:
          #invalid string
-         print(string + " is not a valid datetime.")
+         pass
+         #print("'%s' is not a valid datetime." % (string))
 
    def setEndStr(self, string):
       if REGEX_FULL.match(string):
@@ -44,8 +45,12 @@ class TodoEntry:
          self.end = datetime.strptime(string, FORMAT_HALF)
       else:
          #invalid string
-         print(string + " is not a valid datetime.")
+         pass
+         #print("'%s' is not a valid datetime." % (string))
 
    def getImportance(self):
-      self.importance = (datetime.today()-self.start)/(self.end-self.start)
+      if (self.start and self.end):
+         self.importance = (datetime.today()-self.start)/(self.end-self.start)
+      else:
+         self.importance = 0.0
       return self.importance
